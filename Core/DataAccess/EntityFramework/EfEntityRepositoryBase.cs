@@ -1,7 +1,9 @@
 ﻿using Core.Entities;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -52,6 +54,9 @@ namespace Core.DataAccess.EntityFramework
         {
             using (TContext context = new TContext())
             {
+               
+
+
                 return filter == null ? context.Set<TEntity>().ToList() :
                        context.Set<TEntity>().Where(filter).ToList();
             }
